@@ -18,7 +18,7 @@ public class PastebinScraper extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		MainUI main_ui = new MainUI();
-		Scene scene = new Scene(main_ui, 300, 250);
+		Scene scene = new Scene(main_ui.getPane(), 300, 250);
 		primaryStage.setTitle("Pastebin Scraper");
 		primaryStage.setScene(scene);
 		primaryStage.show();
