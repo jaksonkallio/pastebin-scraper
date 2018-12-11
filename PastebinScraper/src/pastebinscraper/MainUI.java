@@ -52,6 +52,7 @@ public class MainUI {
 	
 	public static final Font TITLE_FONT = new Font("Arial", 18.0);
 	public static final Font STD_FONT = new Font("Arial", 14.0);
+	public static final Font CODE_FONT = new Font("Monospace", 14.0);
 	public static final int STD_SPACING = 10;
 	public static final Insets STD_INSETS = new Insets(10,10,10,10);
 	
