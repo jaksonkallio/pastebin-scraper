@@ -67,7 +67,7 @@ public class Paste {
 	
 	public String getPasteID(){
 		if(paste_id.equals("")){
-			return "hvDQ9S31";
+			return "tDU7mmVv";
 		}
 		
 		return paste_id;
