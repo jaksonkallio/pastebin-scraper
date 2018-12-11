@@ -15,7 +15,6 @@ public class Paste {
 	}
     
     public final void readPaste(){
-        List<PasteResults> results = new ArrayList<>();
         
 		try{
             URL website = new URL("https://pastebin.com/raw/" + getPasteID());

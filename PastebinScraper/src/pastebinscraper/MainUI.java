@@ -61,7 +61,6 @@ public class MainUI {
 	}
 	
 	private void spawnPasteResultsWindow(List<PasteResult> results){
-		System.out.println(javafx.scene.text.Font.getFamilies());
 		Stage stage = new Stage();
 		PasteResultsUI paste_results_ui = new PasteResultsUI(results);
 		Scene scene = new Scene(paste_results_ui.getPane(), 500, 500);
