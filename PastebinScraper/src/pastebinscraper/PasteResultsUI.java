@@ -4,6 +4,7 @@ import java.util.List;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 public class PasteResultsUI extends Pane {
 	public PasteResultsUI(List<PasteResult> results){
@@ -24,10 +25,20 @@ public class PasteResultsUI extends Pane {
 			
 			VBox context_box = new VBox();
 			for(int i = 0; i < result.context.length; i++){
-				context_box.getChildren().add(new Label(result.context[i]));
+				Label context_label = new Label(result.context[i]);
+				context_label.setFont(MainUI.CODE_FONT);
+				
+				if(i == 1){
+					context_label.setTextFill(Color.web("#00b894"));
+				}else{
+					context_label.setTextFill(Color.web("#636e72"));
+				}
+				
+
+				context_box.getChildren().add(context_label);
 			}
 			
-			result_box.getChildren().addAll(result_box, context_box);
+			result_box.getChildren().addAll(line_number_label, context_box);
 			pane.getChildren().add(result_box);
 		}
 		
