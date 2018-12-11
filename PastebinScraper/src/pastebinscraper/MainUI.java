@@ -1,6 +1,8 @@
 package pastebinscraper;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -49,27 +51,13 @@ public class MainUI {
 	}
 	
 	public void doScrapeClick(){
-		String scrape_url = "";
-		scrape_url = paste_url_field.getText();
-		System.out.println("Scrape clicked: " + scrape_url);
-		List<PasteResult> sample_results = new ArrayList<>();
+		String scrape_url = paste_url_field.getText();
+		List<String> keywords = Arrays.asList(keywords_field.getText().split(","));
 		
-		PasteResult pr1 = new PasteResult();
-		pr1.line_number = 5;
-		pr1.context[0] = "previous found line 1";
-		pr1.context[1] = "result in this line 1";
-		pr1.context[2] = "next found line 1";
-		
-		PasteResult pr2 = new PasteResult();
-		pr2.line_number = 102;
-		pr2.context[0] = "previous found line 2";
-		pr2.context[1] = "result in this line 2";
-		pr2.context[2] = "next found line 2";
-		
-		sample_results.add(pr1);
-		sample_results.add(pr2);
-		
-		spawnPasteResultsWindow(sample_results);
+		Paste paste = new Paste(scrape_url);
+		List<PasteResult> paste_results = paste.search(keywords);
+				
+		spawnPasteResultsWindow(paste_results);
 	}
 	
 	private void spawnPasteResultsWindow(List<PasteResult> results){
