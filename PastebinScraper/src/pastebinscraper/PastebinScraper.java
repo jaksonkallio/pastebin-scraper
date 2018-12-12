@@ -11,16 +11,22 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author sabreok
+ * @author Kevin Krauel Jakson Kalio
  */
 public class PastebinScraper extends Application {
 	
 	@Override
+        //main program 
 	public void start(Stage primaryStage) {
+                //sets the main gui. 
 		MainUI main_ui = new MainUI();
+                //will set the main gui
 		Scene scene = new Scene(main_ui.getPane(), 300, 250);
+                //sets the title
 		primaryStage.setTitle("Pastebin Scraper");
+                
 		primaryStage.setScene(scene);
+                //display it 
 		primaryStage.show();
 	}
 
